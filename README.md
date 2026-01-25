@@ -8,7 +8,29 @@ BoneScan AI is our hands-on project where we took a pre-trained YOLOv8 model and
 
 The system combines cutting-edge machine learning technology with a user-friendly interface, allowing doctors and radiologists to simply upload X-ray images and receive immediate AI-assisted analysis with confidence scores and medical recommendations.
 
+## 📁 Project Structure
+```bash
 
+├── data/
+│   ├── raw/                   # Original X-ray images (~8k+)
+│   └── processed/             # Preprocessed images & augmentations
+├── labels/                    # YOLO annotation files (.txt)
+├── models/
+│   ├── pretrained/            # Base YOLOv8 weights (yolov8n.pt)
+│   └── trained/               # Fine-tuned fracture models
+├── results/
+│   ├── metrics/               # mAP, precision, recall plots/JSON
+│   └── predictions/           # Sample detection outputs
+├── static/                    # CSS, JS for web UI
+├── uploads/                   # User-uploaded images (Flask)
+├── .gitignore                 # Python/ML ignores
+├── version.json               # App & model versions
+├── README.md                  # This file
+├── app.py                     # Flask web server
+├── bone_fracture_detector.py  # Core YOLO detection
+└── requirements.txt           # Dependencies
+
+```
 ## 🛠️ Technologies Used
 **Backend**: Python • Flask • **YOLOv8 (fine-tuned)** • PyTorch • OpenCV • Ultralytics  
 **Frontend**: HTML5 • CSS3 • JavaScript • Font Awesome  
