@@ -1,5 +1,8 @@
 # BoneScan AI - Bone Fracture Detection System
 
+![Version](https://img.shields.io/badge/version-1.2.0-blue) ![Python](https://img.shields.io/badge/Python-3.8+-yellow) ![Flask](https://img.shields.io/badge/Backend-Flask-green) ![Status](https://img.shields.io/badge/Status-Beta-orange) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 ## About the Project
 BoneScan AI is our hands-on project where we took a pre-trained YOLOv8 model and fine-tuned it ourselves on 8K+ real X-ray images to detect bone fractures. Doctors can upload an X-ray, and within seconds get bounding boxes around fractures, confidence scores, and helpful medical insights.
 
