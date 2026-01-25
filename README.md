@@ -77,6 +77,7 @@ Results display original image alongside annotated version with bounding boxes
 Get detailed analysis with confidence scores and medical recommendations
 
 📋 Features
+
 ✅ Real-time fracture detection
 
 ✅ Visual results with bounding boxes
