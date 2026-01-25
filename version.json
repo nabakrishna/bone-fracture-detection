@@ -1,0 +1,16 @@
+{
+  "version": "1.2.0",
+  "description": "BoneScan AI - YOLOv8 Bone Fracture Detection System",
+  "model": {
+    "name": "yolov8n-fracture",
+    "version": "1.2.0",
+    "trained_on": "8k+ X-ray images"
+  },
+  "dependencies": {
+    "ultralytics": "^8.0.0",
+    "torch": "^2.0.0",
+    "opencv-python": "^4.8.0",
+    "flask": "^2.3.0"
+  },
+  "release_date": "2026-01-26"
+}
