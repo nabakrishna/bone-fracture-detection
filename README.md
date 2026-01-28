@@ -53,7 +53,7 @@ The system combines cutting-edge machine learning technology with a user-friendl
 Clone the repository
 
 bash
-git clone https://github.com/nabakrishna/Bone-Fracture-Detection.git
+git clone https://github.com/nabakrishna/bone-fracture-detection.git
 cd Bone-Fracture-Detection
 Install dependencies
 
