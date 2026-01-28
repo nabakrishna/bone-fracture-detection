@@ -87,4 +87,9 @@ coverage.xml
 .pytest_cache/
 
 # Render specific
+render.yaml
 .render-buildpacks-cache/
+
+#other
+version.json
+
