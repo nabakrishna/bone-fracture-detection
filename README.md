@@ -12,9 +12,10 @@ The system combines cutting-edge machine learning technology with a user-friendl
 ```bash
 
 ├── data/
-│   ├── raw/                   # Original X-ray images (~8k+)
+│   ├── raw/                   # Train daata
+│   │   └──images/            # Original X-ray images (~8k+)
+│   │   └──labels/            # YOLO annotation files (.txt)
 │   └── processed/             # Preprocessed images & augmentations
-├── labels/                    # YOLO annotation files (.txt)
 ├── models/
 │   ├── pretrained/            # Base YOLOv8 weights (yolov8n.pt)
 │   └── trained/               # Fine-tuned fracture models
