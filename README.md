@@ -29,7 +29,10 @@ The system combines cutting-edge machine learning technology with a user-friendl
 ├── README.md                  # This file
 ├── app.py                     # Flask web server
 ├── bone_fracture_detector.py  # Core YOLO detection
+├──addatabase.sql              # Dynamic database
+├──about_addatabase.txt        # About the database
 └── requirements.txt           # Dependencies
+
 
 ```
 ## 🛠️ Technologies Used
