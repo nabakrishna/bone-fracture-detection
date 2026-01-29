@@ -1,0 +1,54 @@
+==========================================================
+UNIVERSAL DYNAMIC VAULT - SYSTEM GUIDE
+==========================================================
+
+1. DESCRIPTION
+This database is a "Hybrid Store" designed for Medical AI. It 
+stores high-resolution X-rays (Images), Python scripts (Code), 
+and AI results (Metadata) in one high-performance system.
+
+2. HOW TO SETUP (The "Tough" Way)
+   A. Install PostgreSQL (v14 or higher).
+   B. Open your terminal and create a database:
+      CREATE DATABASE medical_vault;
+   C. Run the .sql script to build the architecture:
+      psql -U postgres -d medical_vault -f universal_store.sql
+
+3. THE DYNAMIC ARCHITECTURE
+   - Metadata (JSONB): This is where you store "everything else." 
+     You don't need to change the table if you add new data types.
+   - Large Objects (OID): This handles files up to 4 Terabytes.
+   - Partitioning: The system automatically splits data by year 
+     (e.g., vault_2025, vault_2026) to maintain speed.
+
+4. EXAMPLE: STORING A BONE FRACTURE RESULT
+   If your AI finds a fracture, you use a "Procedure Call" 
+   instead of a long INSERT statement:
+
+   SQL EXECUTION:
+   CALL vault_insert(
+       'patient_scan_001.jpg', 
+       'XRAY', 
+       '{"patient_name": "N.K. Hazarika", "fracture": true, "conf": 0.92}'
+   );
+
+5. EXAMPLE: STORING YOUR DETECTION CODE
+   You can archive your Python script inside the same database:
+
+   SQL EXECUTION:
+   CALL vault_insert(
+       'detector.py', 
+       'PYTHON_CODE', 
+       '{"version": "2.1", "author": "Gemini_AI"}',
+       'import cv2...'::bytea
+   );
+
+6. HOW TO QUERY (Easy Access)
+   To see a "Spreadsheet" view of all your patients and AI scores:
+   SELECT * FROM vault_summary;
+
+7. SECURITY NOTE
+   This database uses Row Level Security (RLS). Ensure your 
+   database user has 'bypassrls' or is the table owner to 
+   see all medical records.
+==========================================================
