@@ -3,15 +3,11 @@
 #include <algorithm>
 #include <cmath>
 
-// 1. DATA STRUCTURE: Represents a single detected fracture
 struct Detection {
     float x1, y1, x2, y2; 
     float confidence;
-    int label; // 0 = Normal, 1 = Fracture
+    int label; 
 };
-
-// 2. CORE ALGO PART A: Intersection Over Union (IoU)
-// Mathematically determines how much two bounding boxes overlap.
 float calculate_iou(const Detection& a, const Detection& b) {
     float x_overlap = std::max(0.0f, std::min(a.x2, b.x2) - std::max(a.x1, b.x1));
     float y_overlap = std::max(0.0f, std::min(a.y2, b.y2) - std::max(a.y1, b.y1));
@@ -23,13 +19,8 @@ float calculate_iou(const Detection& a, const Detection& b) {
 
     return (union_area > 0) ? (intersection / union_area) : 0;
 }
-
-// 3. CORE ALGO PART B: Non-Maximum Suppression (NMS)
-// This is the "cleaner" that deletes redundant boxes around one fracture.
 std::vector<Detection> apply_nms(std::vector<Detection>& candidates, float iou_thresh) {
     std::vector<Detection> results;
-    
-    // Sort by confidence (highest first)
     std::sort(candidates.begin(), candidates.end(), [](const Detection& a, const Detection& b) {
         return a.confidence > b.confidence;
     });
@@ -42,36 +33,26 @@ std::vector<Detection> apply_nms(std::vector<Detection>& candidates, float iou_t
 
         for (size_t j = i + 1; j < candidates.size(); ++j) {
             if (!discarded[j] && calculate_iou(candidates[i], candidates[j]) > iou_thresh) {
-                discarded[j] = true; // Delete lower confidence overlapping boxes
+                discarded[j] = true; 
             }
         }
     }
     return results;
 }
-
-// 4. MAIN ALGORITHM FLOW
 int main() {
-    // Simulated raw tensor output from the CNN for a single X-ray
-    // Let's say the AI sees three boxes around one fracture and one separate fracture
     std::vector<Detection> raw_neural_output = {
-        {150, 150, 250, 250, 0.98, 1}, // Main prediction (High Conf)
-        {155, 148, 255, 248, 0.85, 1}, // Overlap 1 (Noise)
-        {145, 152, 245, 252, 0.72, 1}, // Overlap 2 (Noise)
-        {600, 100, 700, 200, 0.91, 1}  // Separate second fracture
+        {150, 150, 250, 250, 0.98, 1}, 
+        {155, 148, 255, 248, 0.85, 1}, 
+        {145, 152, 245, 252, 0.72, 1}, 
+        {600, 100, 700, 200, 0.91, 1}  
     };
-
     std::cout << "--- FRACTURE DETECTION ALGORITHM ---" << std::endl;
     std::cout << "Raw Output Count: " << raw_neural_output.size() << std::endl;
-
-    // Run the filtering algorithm
     std::vector<Detection> final_detections = apply_nms(raw_neural_output, 0.45);
-
     std::cout << "Final Medical Report: " << final_detections.size() << " Fracture(s) found.\n" << std::endl;
-
     for (const auto& d : final_detections) {
         std::cout << "Fracture Location: [" << d.x1 << ", " << d.y1 << "]" 
                   << " Confidence: " << (d.confidence * 100) << "%" << std::endl;
     }
-
     return 0;
 }
