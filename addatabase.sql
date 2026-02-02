@@ -1,3 +1,4 @@
+--simple database implentation 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE EXTENSION IF NOT EXISTS "lo";
 CREATE TABLE universal_vault (
@@ -13,7 +14,7 @@ CREATE TABLE universal_vault (
     PRIMARY KEY (entry_id, created_at)
 ) PARTITION BY RANGE (created_at);
 
--- 3. AUTOMATIC PARTITIONS (Divide data by Year)
+--  AUTOMATIC PARTITIONS (Divide data by Year)
 CREATE TABLE vault_2025 PARTITION OF universal_vault 
     FOR VALUES FROM ('2025-01-01') TO ('2026-01-01');
 
