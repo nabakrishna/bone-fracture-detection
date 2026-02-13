@@ -92,7 +92,6 @@ render.yaml
 
 #other
 version.json
-addatabase.sql
 about_addatabase.txt
 finr-tunning_algo.cpp
 yolo-post-processing-algorithm.cpp
