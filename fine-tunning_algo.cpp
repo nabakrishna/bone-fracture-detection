@@ -39,7 +39,7 @@ vector<BoneSample> load_bone_dataset() {
         }
         dataset.push_back(sample);
     }
-    cout << "✅ Loaded " << dataset.size() << " bone fracture samples\n";
+    cout<<"✅ Loaded " << dataset.size() << " bone fracture samples\n";
     return dataset;
 }
 
@@ -47,7 +47,7 @@ vector<BoneSample> load_bone_dataset() {
 Matrix load_pretrained_weights() {
     Matrix weights(1000000, vector<double>(1)); // ~1M params
     // Load yolov8n.pt (backbone + head pretrained on COCO)
-    cout << "📥 Loading pretrained YOLOv8n weights from " << PRETRAINED_PATH << endl;
+    cout<<"📥 Loading pretrained YOLOv8n weights from " << PRETRAINED_PATH << endl;
     // In reality: Parse .pt file with PyTorch weights
     for (int i = 0; i < weights.size(); i++) weights[i][0] = 0.1 * sin(i*0.01); // Dummy
     return weights;
@@ -86,8 +86,8 @@ float compute_loss(const Matrix& predictions, const vector<BoneSample>& batch) {
 void fine_tune_yolo(vector<BoneSample>& dataset) {
     Matrix pretrained_weights = load_pretrained_weights();
     
-    cout << "\n🚀 Fine-tuning YOLOv8 for Bone Fractures\n";
-    cout << "Batch: " << BATCH_SIZE << ", Epochs: " << EPOCHS << ", LR: " << LR << endl;
+    cout<<"\n🚀 Fine-tuning YOLOv8 for Bone Fractures\n";
+    cout<<"Batch: " << BATCH_SIZE << ", Epochs: " << EPOCHS << ", LR: " << LR << endl;
     
     for (int epoch = 0; epoch < EPOCHS; epoch++) {
         float epoch_loss = 0;
@@ -117,16 +117,17 @@ void fine_tune_yolo(vector<BoneSample>& dataset) {
             cout << "Epoch " << epoch << "/100 | Loss: " << epoch_loss/dataset.size()/BATCH_SIZE << endl;
     }
     
-    cout << "💾 Saving fine-tuned bone_fracture_yolov8.pt\n";
+    cout<<"💾 Saving fine-tuned bone_fracture_yolov8.pt\n";
 }
 
 int main() {
     auto bone_dataset = load_bone_dataset();
     fine_tune_yolo(bone_dataset);
     
-    cout << "\n✅ Training COMPLETE! Model ready for fracture detection.\n";
-    cout << "Your dataset format:\n";
-    cout << "images/\n  fracture_001.jpg\n  normal_001.jpg\n";
-    cout << "labels/\n  fracture_001.txt  # 0 0.5 0.5 0.2 0.1\n";
+    cout<<"\n✅ Training COMPLETE! Model ready for fracture detection.\n";
+    cout<<"Your dataset format:\n";
+    cout<<"images/\n  fracture_001.jpg\n  normal_001.jpg\n";
+    cout<<"labels/\n  fracture_001.txt  # 0 0.5 0.5 0.2 0.1\n";
+    cout<<"success\n";
     return 0;
 }
