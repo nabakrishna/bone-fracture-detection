@@ -17,21 +17,23 @@ The system combines cutting-edge machine learning technology with a user-friendl
 │   │   └──labels/            # YOLO annotation files (.txt)
 │   └── processed/             # Preprocessed images & augmentations
 ├── models/
-│   ├── pretrained/            # Base YOLOv8 weights (yolov8n.pt)
+│   ├── pretrained/            # Base YOLOv8 weights (yolov8n.pt) 
 │   └── trained/               # Fine-tuned fracture models
 ├── results/
 │   ├── metrics/               # mAP, precision, recall plots/JSON
 │   └── predictions/           # Sample detection outputs
-├── static/                    # CSS, JS for web UI
+├── static/                    # .gitkeep
 ├── uploads/                   # User-uploaded images (Flask)
 ├── .gitignore                 # Python/ML ignores
 ├── version.json               # App & model versions
 ├── README.md                  # This file
 ├── app.py                     # Flask web server
 ├── bone_fracture_detector.py  # Core YOLO detection
-├──addatabase.sql              # Dynamic database
 ├──test.py                     # Testing code for dataset and runner code and dir check
-├──about_addatabase.txt        # About the database
+├── index.html                 # Basic html code
+├── styles.css                 # css code
+├── script.js                  # js code
+├── fine_tunning_algo.cpp      # cpp code for the fine tunning the model
 └── requirements.txt           # Dependencies
 
 
