@@ -1,4 +1,5 @@
 ##!/usr/bin/env python3
+#also important to see the python version , some of the libaries are not comapatable with the python 3.14
 """
 Complete Bone Fracture Detection System
 Single file solution with all functionality included
@@ -485,6 +486,7 @@ class BoneFractureDetectionSystem:
 # Bone Fracture Detection System
 
 ## Directory Structure
+
 
 
 
