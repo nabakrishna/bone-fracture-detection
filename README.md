@@ -29,7 +29,7 @@ The system combines cutting-edge machine learning technology with a user-friendl
 ├── README.md                  # This file
 ├── app.py                     # Flask web server
 ├── bone_fracture_detector.py  # Core YOLO detection
-├──test.py                     # Testing code for dataset and runner code and dir check
+├── test.py                     # Testing code for dataset and runner code and dir check
 ├── index.html                 # Basic html code
 ├── styles.css                 # css code
 ├── script.js                  # js code
