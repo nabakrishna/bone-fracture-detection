@@ -29,7 +29,6 @@ import logging
 import time
 from pathlib import Path
 from typing import List, Optional, Dict, Any
-
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
