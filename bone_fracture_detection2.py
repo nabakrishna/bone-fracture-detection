@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 #epoch is basicaly from 50 to 100 and batch size is from 16 to 8 and confidence threshold is from 0.5 to 0.3 and learning rate is from 0.01 to 0.001
 """ 
 Bone Fracture Detection System using YOLOv8
@@ -19,7 +20,7 @@ Usage:
     # Check status
     python bone_fracture.py status
 """
-
+#importing the all the req libary
 import os
 import sys
 import yaml
@@ -44,7 +45,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Supported image extensions
+# supported image extensions
 IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff")
 
 __all__ = ["BoneFractureDetectionSystem"]
@@ -148,7 +149,7 @@ def collect_image_files(directory: Path) -> List[Path]:
 
 
 # ---------------------------------------------------------------------------
-# Main system--class definition and methodsf
+# main system--class definition and methodsf
 # ---------------------------------------------------------------------------
 class BoneFractureDetectionSystem:
     """End-to-end bone fracture detection: data prep → training → inference."""
@@ -270,7 +271,7 @@ class BoneFractureDetectionSystem:
                 n_corrupt += 1
                 continue
 
-            # check label (optional — images without labels are "negatives")
+            # check label (optional — images without labels are "negatives") imp for a good training 
             label = self.dirs["raw_labels"] / f"{img.stem}.txt"
             if label.exists():
                 errs = validate_yolo_label(label, num_classes)
@@ -376,7 +377,7 @@ class BoneFractureDetectionSystem:
         Returns the path to ``best.pt`` on success, ``None`` on failure.
         """
         from ultralytics import YOLO
-
+#in this we fine tune the yolo model yolov8 but for upgration and more stable we can go for yolo11l or yolo26l(latest model)
         yaml_path = self.dirs["processed"] / "data.yaml"
         if not yaml_path.exists():
             logger.error("data.yaml not found. Run prepare_dataset() first.")
@@ -384,7 +385,7 @@ class BoneFractureDetectionSystem:
 
         logger.info(f"Loading pretrained {self.config['model_name']} …")
         self.model = YOLO(f"{self.config['model_name']}.pt")
-
+#imp may some more parameter may be addfor accuracy in specific class 
         params = {
             "data":        str(yaml_path),
             "epochs":      kwargs.get("epochs",  self.config["epochs"]),
@@ -442,7 +443,7 @@ class BoneFractureDetectionSystem:
     ) -> None:
         info_path = self.dirs["metrics"] / "training_info.yaml"
 
-        # Extract metrics from results safely
+        # extract metrics from results safely
         metrics: Dict[str, Any] = {}
         try:
             box = results.results_dict
@@ -473,7 +474,7 @@ class BoneFractureDetectionSystem:
             logger.error("data.yaml not found.")
             return {}
 
-        # Prefer test set; fall back to val
+        # Prefer test set; fall back to val it 
         test_imgs = self.dirs["processed"] / "test" / "images"
         split = "test" if test_imgs.exists() and any(test_imgs.iterdir()) else "val"
         logger.info(f"Evaluating on '{split}' split …")
@@ -726,7 +727,7 @@ class BoneFractureDetectionSystem:
 
 
 # ---------------------------------------------------------------------------
-# CLI interface for efficient testing and usage
+# cli interface for efficient testing and usage
 # ---------------------------------------------------------------------------
 def build_cli() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
