@@ -52,6 +52,8 @@ def detect_fractures(
         show: Display the result
         verbose: Show all detections, not just fractures
     """
+
+    #testing some img locally ---
     model_path = Path(r"C:\Users\N. K. Hazarika\Downloads\best (3).pt")
     # #"C:\Users\N. K. Hazarika\Downloads\best (3).pt"
     image_path = Path(r"D:\bone-fracture-detection\data\raw\images\0919_1128064861_06_WRI-R2_M004.png")
@@ -73,7 +75,7 @@ def detect_fractures(
     # Load model
     model = YOLO(str(model_path))
     
-    # Define class categories
+    # Define class categories there are more
     FRACTURE_CLASSES = ['fracture', 'bone fracture', 'bone injury', 'bonelesion']
     IGNORE_CLASSES = ['text']
     
@@ -298,7 +300,7 @@ if __name__ == "__main__":
     main()
 
 
-
+#thats what ---
 # expect to run with:
 #py -3.12 test2.py --model "best (3).pt" --image "0919_1128064861_06_WRI-R2_M004.png" --show
 # Screenshot 2026-02-12 175939.png
