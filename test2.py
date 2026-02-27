@@ -1,4 +1,4 @@
-#new test file for detection
+#new test file for detection with new arch
 
 #!/usr/bin/env python3
 """
