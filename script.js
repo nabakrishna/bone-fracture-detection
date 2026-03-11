@@ -10,6 +10,7 @@ const loadingContainer = document.getElementById('loadingContainer');
 const resultsSection = document.getElementById('results');
 const confidenceSlider = document.getElementById('confidenceSlider');
 const confidenceValue = document.getElementById('confidenceValue');
+// const datareport = document.getElementById('datareport');
 
 // Navigation
 document.querySelectorAll('.nav-link').forEach(link => {
@@ -391,4 +392,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
 
