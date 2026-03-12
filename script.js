@@ -12,6 +12,7 @@ const confidenceSlider = document.getElementById('confidenceSlider');
 const confidenceValue = document.getElementById('confidenceValue');
 // const datareport = document.getElementById('datareport');
 
+
 // Navigation
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', (e) => {
@@ -392,5 +393,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
 
 
