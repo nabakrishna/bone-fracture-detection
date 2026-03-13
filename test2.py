@@ -301,7 +301,7 @@ if __name__ == "__main__":
 
 
 #thats what ---
-# expect to run with:
+# to run with:
 #py -3.12 test2.py --model "best (3).pt" --image "0919_1128064861_06_WRI-R2_M004.png" --show
 # Screenshot 2026-02-12 175939.png
 # py -3.12 test2.py --model "best (3).pt" --image "Screenshot 2026-02-12 175939.png" --show
