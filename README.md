@@ -12,29 +12,32 @@ The system combines cutting-edge machine learning technology with a user-friendl
 ```bash
 
 ├── data/
-│   ├── raw/                   # Train daata
-│   │   └──images/            # Original X-ray images (~8k+)
-│   │   └──labels/            # YOLO annotation files (.txt)
-│   └── processed/             # Preprocessed images & augmentations
+│   ├── raw/                       # Train daata
+│   │   └──images/                 # Original X-ray images (~8k+)
+│   │   └──labels/                 # YOLO annotation files (.txt)
+│   └── processed/                 # Preprocessed images & augmentations
 ├── models/
-│   ├── pretrained/            # Base YOLOv8 weights (yolov8n.pt) 
-│   └── trained/               # Fine-tuned fracture models
+│   ├── pretrained/                # Base YOLOv8 weights (yolov8n.pt) 
+│   └── trained/                   # Fine-tuned fracture models
 ├── results/
-│   ├── metrics/               # mAP, precision, recall plots/JSON
-│   └── predictions/           # Sample detection outputs
-├── static/                    # .gitkeep
-├── uploads/                   # User-uploaded images (Flask)
-├── .gitignore                 # Python/ML ignores
-├── version.json               # App & model versions
-├── README.md                  # This file
-├── app.py                     # Flask web server
-├── bone_fracture_detector.py  # Core YOLO detection
-├── test.py                     # Testing code for dataset and runner code and dir check
-├── index.html                 # Basic html code
-├── styles.css                 # css code
-├── script.js                  # js code
-├── fine_tunning_algo.cpp      # cpp code for the fine tunning the model
-└── requirements.txt           # Dependencies
+│   ├── metrics/                   # mAP, precision, recall plots/JSON
+│   └── predictions/               # Sample detection outputs
+├── static/                        # .gitkeep
+├── uploads/                       # User-uploaded images (Flask)
+├── .gitignore                     # Python/ML ignores
+├── version.json                   # App & model versions
+├── README.md                      # This file
+├── app.py                         # Flask web server
+├── bone_fracture_detector.py      # Core YOLO detection
+├── bone_fracture_detection2.py    #new detection and train code
+├── test.py                        # Testing code for dataset and runner code and dir check
+├── test2.py                       # new test script 
+├── index.html                     # Basic html code
+├── styles.css                     # css code
+├── script.js                      # js code
+├── streamlit_site.py              # py script for dashbord with backend for this application
+├── fine_tunning_algo.cpp          # cpp code for the fine tunning the model
+└── requirements.txt               # Dependencies
 
 
 ```
