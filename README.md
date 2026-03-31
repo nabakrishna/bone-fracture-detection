@@ -47,7 +47,7 @@ The system combines cutting-edge machine learning technology with a user-friendl
 **Deployment**: Gunicorn • Render
 
 ## Predictions
-![Results](results/predictions/Screenshot 2026-03-31 173027.png)
+![Results](results/predictions/Screenshot-2026-03-31-173027.png)
 
 ## 🚀 Results & Performance 
 ![Results](results/metrics/results.png)
