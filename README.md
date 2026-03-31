@@ -1,10 +1,10 @@
-# BoneScan AI - Bone Fracture Detection System
+# BoneVision AI - Bone Fracture Detection System 
 
 ![Version](https://img.shields.io/badge/version-2.0.0-blue) ![Python](https://img.shields.io/badge/Python-3.12+-yellow) ![Flask](https://img.shields.io/badge/Backend-Flask-green) ![Status](https://img.shields.io/badge/Status-Beta-orange) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 ## About the Project
-BoneScan AI is our hands-on project where we took a pre-trained YOLOv8 model and fine-tuned it ourselves on 8K+ real X-ray images to detect bone fractures. Doctors can upload an X-ray, and within seconds get bounding boxes around fractures, confidence scores, and helpful medical insights.
+BoneVision AI is our hands-on project where we took a pre-trained YOLOv8 model and fine-tuned it ourselves on 8K+ real X-ray images to detect bone fractures. Doctors can upload an X-ray, and within seconds get bounding boxes around fractures, confidence scores, and helpful medical insights.
 
 The system combines cutting-edge machine learning technology with a user-friendly interface, allowing doctors and radiologists to simply upload X-ray images and receive immediate AI-assisted analysis with confidence scores and medical recommendations.
 
@@ -45,6 +45,9 @@ The system combines cutting-edge machine learning technology with a user-friendl
 **Backend**: Python • Flask • **YOLOv8 (fine-tuned)** • PyTorch • OpenCV • Ultralytics  
 **Frontend**: HTML5 • CSS3 • JavaScript • Font Awesome  
 **Deployment**: Gunicorn • Render
+
+## Predictions
+![Results](results/predictions/Screenshot 2026-03-31 173027.png)
 
 ## 🚀 Results & Performance 
 ![Results](results/metrics/results.png)
