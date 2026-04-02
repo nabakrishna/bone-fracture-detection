@@ -43,7 +43,7 @@ The system combines cutting-edge machine learning technology with a user-friendl
 ```
 ## 🛠️ Technologies Used
 **Backend**: Python • Flask • **YOLOv8 (fine-tuned)** • PyTorch • OpenCV • Ultralytics  
-**Frontend**: HTML5 • CSS3 • JavaScript • Font Awesome  • (now i  use streamlit for better backend integration)
+**Frontend**: HTML5 • CSS3 • JavaScript • Font Awesome  • streamlit-py
 **Deployment**: Gunicorn • Render
 
 ## Predictions
